@@ -4,11 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "storybook": "start-storybook -p 9001 -c .storybook"
+    "prestorybook": "if [ ! -d node_modules ]; then npm install; fi",
+    "storybook": "start-storybook -p 9001 -c .storybook",
+    "storybook-build": "build-storybook -c .storybook -o .out",
+    "storybook-deploy": "storybook-to-ghpages"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@storybook/storybook-deployer": "^2.3.0",
     "@storybook/vue": "^3.4.0",
     "babel-core": "^6.26.0",
     "vue-loader": "^14.2.2",
