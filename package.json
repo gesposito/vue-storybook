@@ -1,0 +1,20 @@
+{
+  "name": "vue-storybook",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "storybook": "start-storybook -p 9001 -c .storybook"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@storybook/vue": "^3.4.0",
+    "babel-core": "^6.26.0",
+    "vue-loader": "^14.2.2",
+    "vue-template-compiler": "^2.5.16"
+  },
+  "dependencies": {
+    "vue": "^2.5.16"
+  }
+}
