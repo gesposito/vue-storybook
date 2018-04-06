@@ -17,6 +17,7 @@
   "dependencies": {
     "bootstrap-italia": "git+https://github.com/italia/bootstrap-italia.git",
     "bootstrap-vue": "^2.0.0-rc.6",
-    "vue": "^2.5.16"
+    "vue": "^2.5.16",
+    "vuex": "^3.0.1"
   }
 }

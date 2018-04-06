@@ -5,8 +5,11 @@ import "bootstrap-italia/dist/css/italia-icon-font.css";
 
 import Vue from "vue";
 import BootstrapVue from "bootstrap-vue";
+import Vuex from "vuex";
 
+// Install Vue plugins.
 Vue.use(BootstrapVue);
+Vue.use(Vuex);
 
 const req = require.context("../src/components", true, /\.stories\.js$/);
 

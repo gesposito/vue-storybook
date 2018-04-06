@@ -1,4 +1,5 @@
 import Vue from "vue";
+import Vuex from "vuex";
 
 import { storiesOf } from "@storybook/vue";
 
@@ -34,11 +35,37 @@ storiesOf("Alert", module)
       <b-alert variant="warning"
         dismissible
         :show="showDismissibleAlert"
-        @dismissed="showDismissibleAlert=false">
+        @dismissed="showDismissibleAlert=false"
+      >
         <strong>Attenzione</strong> Alcuni campi inseriti sono da controllare.
       </b-alert>
     `,
     data() {
       return { showDismissibleAlert: true };
+    }
+  }))
+  .add("Esempio con Store", () => ({
+    template: `
+      <b-alert 
+          variant="warning"
+          dismissible
+          :show="!$store.state.closed"
+          @dismissed="onClose"
+      >
+          <strong>Attenzione</strong> Alcuni campi inseriti sono da controllare.
+      </b-alert>
+    `,
+    store: new Vuex.Store({
+      state: { closed: false },
+      mutations: {
+        close(state) {
+          state.closed = true;
+        }
+      }
+    }),
+    methods: {
+      onClose() {
+        this.$store.commit("close");
+      }
     }
   }));
